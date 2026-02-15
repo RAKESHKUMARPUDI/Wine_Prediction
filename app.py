@@ -9,10 +9,9 @@ from sklearn.metrics import (accuracy_score, roc_auc_score, precision_score,
 
 st.set_page_config(page_title="Wine Quality AI", layout="wide")
 
-# Load Scaler
 scaler = pickle.load(open("model/scaler.pkl", "rb"))
 
-# --- SIDEBAR ---
+
 st.sidebar.header("1. Model Selection")
 model_options = ["Logistic_Regression", "Decision_Tree", "kNN", "Naive_Bayes", "Random_Forest", "XGBoost"]
 selected_model_name = st.sidebar.selectbox("Select Model", model_options)
@@ -35,7 +34,6 @@ else:
     if uploaded_file is not None:
         test_df = pd.read_csv(uploaded_file)
 
-# --- MAIN PAGE LOGIC ---
 if test_df is not None:
     if 'target' in test_df.columns:
         X_test_new = test_df.drop('target', axis=1)
@@ -78,4 +76,5 @@ if test_df is not None:
     else:
         st.error("CSV must contain a 'target' column.")
 else:
+
     st.info("Select a data source in the sidebar to begin.")
