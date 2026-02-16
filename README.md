@@ -1,5 +1,8 @@
 # Wine Quality Classification Project
 
+##Live Streamlit App Link
+https://wineprediction-n79kbcapa6dwwdnohrmbp2.streamlit.app/
+
 ## a. Problem Statement
 The goal of this project is to classify red wines as "Good" (Score >= 7) or "Bad" (Score < 7) 
 based on their chemical properties using various Machine Learning algorithms.
